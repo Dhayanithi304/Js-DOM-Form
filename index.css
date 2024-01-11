@@ -12,6 +12,8 @@ h1{
     margin-bottom: 100px;
 }
 form {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 30px 40px;
     border-radius: 8px;
@@ -30,6 +32,8 @@ input,
 select,
 option {
     width: 100%;
+    display: flex;
+    flex: 1;
     padding: 10px;
     margin-bottom: 20px;
     font-size: 14px;
@@ -39,6 +43,7 @@ option {
     }
 
 input[type="checkbox"] {
+    display: inline-block;
     width: 13px;
     height: 13px;
     margin-bottom: 0;
@@ -118,6 +123,5 @@ th {
   color: white;
   font-weight: 350;
 } */
-
 
 

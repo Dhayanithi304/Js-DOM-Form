@@ -4,32 +4,34 @@ function submitForm() {
   var address = document.getElementById("address").value;
   var pincode = document.getElementById("pincode").value;
   var gender = document.getElementById("gender").value;
-  var state = document.getElementById("state").value;
-  var country = document.getElementById("country").value;
-
-  var food = "";
+  
+  var food = [];
   var foodCount = 0;
 
   if (document.getElementById("food1").checked == true) {
-    food += document.getElementById("food1").value;
+    food.push(document.getElementById("food1").value);
     foodCount++;
   }
   if (document.getElementById("food2").checked == true) {
-    food += document.getElementById("food2").value;
+    food.push(document.getElementById("food2").value);
     foodCount++;
   }
   if (document.getElementById("food3").checked == true) {
-    food += document.getElementById("food3").value;
+    food.push(document.getElementById("food3").value);
     foodCount++;
   }
   if (document.getElementById("food4").checked == true) {
-    food += document.getElementById("food4").value;
+    food.push(document.getElementById("food4").value);
     foodCount++;
   }
   if (document.getElementById("food5").checked == true) {
-    food += document.getElementById("food5").value;
+    food.push(document.getElementById("food5").value);
     foodCount++;
   }
+
+  var state = document.getElementById("state").value;
+  var country = document.getElementById("country").value;
+
   var table = document.getElementById("dataTable");
   var row = table.insertRow(table.rows.length);
   if (
@@ -56,14 +58,17 @@ function submitForm() {
     cell3.innerHTML = address;
     cell4.innerHTML = pincode;
     cell5.innerHTML = gender;
-    cell6.innerHTML = food.join(", ");
+    cell6.innerHTML = food.join(', ');
     cell7.innerHTML = state;
     cell8.innerHTML = country;
   }else if(foodCount < 2){
     document.getElementById("small").style.color = "red";
     document.getElementById("small").style.fontSize = "14px";
     return false
-  }else{
+  }else if(firstname === ""){
+    document.getElementById("span").innerText = "Please enter your details ";
+  }
+  else{
     alert(" fill all the details"); return false;
   }
 
