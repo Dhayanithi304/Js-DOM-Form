@@ -4,7 +4,7 @@ function submitForm() {
   var address = document.getElementById("address").value;
   var pincode = document.getElementById("pincode").value;
   var gender = document.getElementById("gender").value;
-  
+
   var food = [];
   var foodCount = 0;
 
@@ -58,18 +58,49 @@ function submitForm() {
     cell3.innerHTML = address;
     cell4.innerHTML = pincode;
     cell5.innerHTML = gender;
-    cell6.innerHTML = food.join(', ');
+    cell6.innerHTML = food.join(", ");
     cell7.innerHTML = state;
     cell8.innerHTML = country;
-  }else if(foodCount < 2){
+  }else if(firstname == "" &&
+    lastname =="" &&
+    address=="" &&
+    pincode=="" &&
+    gender=="none" &&
+    foodCount < 2 &&
+    state=="" &&
+    country==""){
+      document.getElementById("span1").innerText = "Please enter your details ";
+      window.scrollTo(0, 0);
+      document.getElementById("span2").innerText = "Please enter your details ";
+      document.getElementById("span3").innerText = "Please enter your details ";
+      document.getElementById("span4").innerText = "Please enter your details ";
+      document.getElementById("span5").innerText = "Please enter your details ";
+      document.getElementById("span6").innerText = "Please enter your details ";
+      document.getElementById("span7").innerText = "Please enter your details ";
+  } else if (firstname == "") {
+    document.getElementById("span1").innerText = "Please enter your details ";
+    window.scrollTo(0, 0);
+  } else if (lastname == "") {
+    document.getElementById("span2").innerText = "Please enter your details ";
+    window.scrollTo(0, 20);
+  } else if (address == "") {
+    document.getElementById("span3").innerText = "Please enter your details ";
+  } else if (pincode == "") {
+    document.getElementById("span4").innerText = "Please enter your details ";
+  } else if (gender == "none") {
+    document.getElementById("span5").innerText = "Please enter your details ";
+  } else if (foodCount < 2) {
     document.getElementById("small").style.color = "red";
     document.getElementById("small").style.fontSize = "14px";
-    return false
-  }else if(firstname === ""){
-    document.getElementById("span").innerText = "Please enter your details ";
-  }
-  else{
-    alert(" fill all the details"); return false;
+    window.scrollTo(0, 330);
+    return false;
+  } else if (state == "") {
+    document.getElementById("span6").innerText = "Please enter your details ";
+  } else if (country == "") {
+    document.getElementById("span7").innerText = "Please enter your details ";
+  }else {
+    document.getElementsByClassName("span").innerText = "Please enter your details ";
+    return false;
   }
 
   document.getElementById("myForm").reset();
