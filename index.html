@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JS DOM Form</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
       <div class="container">
-        <div class="formDiv">
         <form id="myForm">
         <center>
           <h1>DOM Manipulating form</h1>
@@ -72,36 +71,29 @@
           id="food1"
           value="Parota"
           name="food"
-        />Parota
+        /><label for="food1" class="foodlabel" >Parota</label>
         <input
           class="foodoption"
           type="checkbox"
           id="food2"
           value="Biriyani"
           name="food"
-        />Biriyani
+        /><label for="food2" class="foodlabel">Biriyani</label>
         <input
           class="foodoption"
           type="checkbox"
           id="food3"
           value="Dosa"
           name="food"
-        />Dosa
+        /><label for="food3" class="foodlabel">Dosa</label>
         <input
           class="foodoption"
           type="checkbox"
           id="food4"
-          value="Chicken friedrice"
+          value="Chicken Grill"
           name="food"
-        />Chicken friedrice
-        <input
-          class="foodoption"
-          type="checkbox"
-          id="food5"
-          value="Samosa"
-          name="food"
-        />Samosa
-      </div>
+        /><label for="food4" class="foodlabel">Chicken Grill</label>
+        </div>
         <br />
         <label for="state">State <span class="classspan" id="span6"></span></label>
         <input
@@ -121,11 +113,8 @@
         <br />
         <button type="button" id="submit" onclick="submitForm()">Submit</button>
       </form>
-    </div>
-      <br />
-      <br />
       <div id="tableDiv">
-        <table id="dataTable">
+          <table id="dataTable">
           <thead>
             <tr>
               <th>Firstname</th>

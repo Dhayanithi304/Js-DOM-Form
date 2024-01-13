@@ -24,16 +24,9 @@ function submitForm() {
     food.push(document.getElementById("food4").value);
     foodCount++;
   }
-  if (document.getElementById("food5").checked == true) {
-    food.push(document.getElementById("food5").value);
-    foodCount++;
-  }
-
   var state = document.getElementById("state").value;
   var country = document.getElementById("country").value;
 
-  var table = document.getElementById("dataTable");
-  var row = table.insertRow(table.rows.length);
   if (
     firstname &&
     lastname &&
@@ -44,64 +37,58 @@ function submitForm() {
     state &&
     country
   ) {
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
-    var cell7 = row.insertCell(6);
-    var cell8 = row.insertCell(7);
+    var table = document.getElementById("dataTable");
+    var row = table.insertRow(table.rows.length);
+  
+    row.insertCell(0).innerHTML = firstname;
+    row.insertCell(1).innerHTML = lastname;
+    row.insertCell(2).innerHTML = address;
+    row.insertCell(3).innerHTML = pincode;
+    row.insertCell(4).innerHTML = gender;
+    row.insertCell(5).innerHTML = food.join(", ");
+    row.insertCell(6).innerHTML = state;
+    row.insertCell(7).innerHTML = country;
 
-    cell1.innerHTML = firstname;
-    cell2.innerHTML = lastname;
-    cell3.innerHTML = address;
-    cell4.innerHTML = pincode;
-    cell5.innerHTML = gender;
-    cell6.innerHTML = food.join(", ");
-    cell7.innerHTML = state;
-    cell8.innerHTML = country;
-  }else if(firstname == "" &&
-    lastname =="" &&
-    address=="" &&
-    pincode=="" &&
-    gender=="none" &&
-    foodCount < 2 &&
-    state=="" &&
-    country==""){
-      document.getElementById("span1").innerText = "Please enter your details ";
-      window.scrollTo(0, 0);
-      document.getElementById("span2").innerText = "Please enter your details ";
-      document.getElementById("span3").innerText = "Please enter your details ";
-      document.getElementById("span4").innerText = "Please enter your details ";
-      document.getElementById("span5").innerText = "Please enter your details ";
-      document.getElementById("span6").innerText = "Please enter your details ";
-      document.getElementById("span7").innerText = "Please enter your details ";
-  } else if (firstname == "") {
-    document.getElementById("span1").innerText = "Please enter your details ";
-    window.scrollTo(0, 0);
-  } else if (lastname == "") {
-    document.getElementById("span2").innerText = "Please enter your details ";
-    window.scrollTo(0, 20);
-  } else if (address == "") {
-    document.getElementById("span3").innerText = "Please enter your details ";
-  } else if (pincode == "") {
-    document.getElementById("span4").innerText = "Please enter your details ";
-  } else if (gender == "none") {
-    document.getElementById("span5").innerText = "Please enter your details ";
-  } else if (foodCount < 2) {
-    document.getElementById("small").style.color = "red";
-    document.getElementById("small").style.fontSize = "14px";
-    window.scrollTo(0, 330);
-    return false;
-  } else if (state == "") {
-    document.getElementById("span6").innerText = "Please enter your details ";
-  } else if (country == "") {
-    document.getElementById("span7").innerText = "Please enter your details ";
-  }else {
-    document.getElementsByClassName("span").innerText = "Please enter your details ";
-    return false;
+    document.getElementById("myForm").reset();
+  } else{
+    
+  document.getElementById("span1").innerText = firstname
+  ? ""
+  : "Enter your Details";
+document.getElementById("span2").innerText = lastname
+  ? ""
+  : "Enter your Details";
+document.getElementById("span3").innerText = address
+  ? ""
+  : "Enter your Details";
+document.getElementById("span4").innerText = pincode
+  ? ""
+  : "Enter your Details";
+document.getElementById("span5").innerText = gender
+  ? "none"
+  : "Enter your Details";
+foodCount
+  ? foodCount < 2
+  : (document.getElementById("small").style.color = "red");
+document.getElementById("small").style.fontSize = "14px";
+document.getElementById("span6").innerText = state
+  ? ""
+  : "Enter your Details";
+document.getElementById("span7").innerText = country
+  ? ""
+  : "Enter your Details";
   }
-
-  document.getElementById("myForm").reset();
 }
+
+window.addEventListener('scroll', function() {
+  // Calculate the distance from the top of the document to the bottom of the last section
+  var tablediv = document.getElementById('tableDiv');
+  var tablesection = tablediv.offsetTop + tablediv.offsetHeight;
+
+  // Check if the user has scrolled to the last section
+  if (window.scrollY + window.innerHeight >= tablesection) {
+    tablediv.classList.add('scrolled');
+  } else {
+    tablediv.classList.remove('scrolled');
+  }
+});
