@@ -77,30 +77,50 @@ function submitForm() {
       document.getElementById("span5").innerText = "Please enter your details ";
       document.getElementById("span6").innerText = "Please enter your details ";
       document.getElementById("span7").innerText = "Please enter your details ";
-  } else if (firstname == "") {
-    document.getElementById("span1").innerText = "Please enter your details ";
-    window.scrollTo(0, 0);
-  } else if (lastname == "") {
-    document.getElementById("span2").innerText = "Please enter your details ";
-    window.scrollTo(0, 20);
-  } else if (address == "") {
-    document.getElementById("span3").innerText = "Please enter your details ";
-  } else if (pincode == "") {
-    document.getElementById("span4").innerText = "Please enter your details ";
-  } else if (gender == "none") {
-    document.getElementById("span5").innerText = "Please enter your details ";
-  } else if (foodCount < 2) {
-    document.getElementById("small").style.color = "red";
-    document.getElementById("small").style.fontSize = "14px";
-    window.scrollTo(0, 330);
-    return false;
-  } else if (state == "") {
-    document.getElementById("span6").innerText = "Please enter your details ";
-  } else if (country == "") {
-    document.getElementById("span7").innerText = "Please enter your details ";
-  }else {
-    document.getElementsByClassName("span").innerText = "Please enter your details ";
-    return false;
+  } else
+     for(let i=0;i<)
+  switch (firstname,lastname,address,pincode,gender,foodCount,state,country){
+    case firstname == "";
+      document.getElementById("span1").innerText = "Please enter your details ";
+      window.scrollTo(0, 0);
+      break;
+    case lastname == "";
+      document.getElementById("span2").innerText = "Please enter your details ";
+      window.scrollTo(0, 20);
+      break;
+    case address=="";
+      document.getElementById("span3").innerText = "Please enter your details ";
+      break;
+    case pincode=="";
+      document.getElementById("span4").innerText = "Please enter your details ";
+      break;
+    case gender =="";
+      document.getElementById("span5").innerText = "Please enter your details ";
+      break;
+    case foodCount < 2;
+      document.getElementById("small").style.color = "red";
+      document.getElementById("small").style.fontSize = "14px";
+      window.scrollTo(0, 330);
+      break;
+    case state =="";
+      document.getElementById("span6").innerText = "Please enter your details ";
+      break;
+    case country =="";
+      document.getElementById("span7").innerText = "Please enter your details ";
+      break;
+    case firstname == "" && lastname =="" && address=="" && pincode=="" && gender=="none" && foodCount < 2 && state=="" && country==""
+      document.getElementById("span1").innerText = "Please enter your details ";
+      window.scrollTo(0, 0);
+      document.getElementById("span2").innerText = "Please enter your details ";
+      document.getElementById("span3").innerText = "Please enter your details ";
+      document.getElementById("span4").innerText = "Please enter your details ";
+      document.getElementById("span5").innerText = "Please enter your details ";
+      document.getElementById("span6").innerText = "Please enter your details ";
+      document.getElementById("span7").innerText = "Please enter your details ";
+      document.getElementById("small").style.color = "red";
+      document.getElementById("small").style.fontSize = "14px";
+      window.scrollTo(0, 330);
+    break;
   }
 
   document.getElementById("myForm").reset();
