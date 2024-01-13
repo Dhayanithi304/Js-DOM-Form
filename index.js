@@ -70,16 +70,15 @@ function submitForm() {
     state=="" &&
     country==""){
       document.getElementById("span1").innerText = "Please enter your details ";
-      window.scrollTo(0, 0);
       document.getElementById("span2").innerText = "Please enter your details ";
       document.getElementById("span3").innerText = "Please enter your details ";
       document.getElementById("span4").innerText = "Please enter your details ";
       document.getElementById("span5").innerText = "Please enter your details ";
       document.getElementById("span6").innerText = "Please enter your details ";
       document.getElementById("span7").innerText = "Please enter your details ";
+      window.scrollTo(0, 0);
   } else {
-    
-  switch (firstname,lastname,address,pincode,gender,foodCount,state,country){
+  switch (){
     case firstname == "";
       document.getElementById("span1").innerText = "Please enter your details ";
       window.scrollTo(0, 0);
@@ -108,22 +107,7 @@ function submitForm() {
     case country =="";
       document.getElementById("span7").innerText = "Please enter your details ";
       break;
-    case firstname == "" && lastname =="" && address=="" && pincode=="" && gender=="none" && foodCount < 2 && state=="" && country==""
-      document.getElementById("span1").innerText = "Please enter your details ";
-      window.scrollTo(0, 0);
-      document.getElementById("span2").innerText = "Please enter your details ";
-      document.getElementById("span3").innerText = "Please enter your details ";
-      document.getElementById("span4").innerText = "Please enter your details ";
-      document.getElementById("span5").innerText = "Please enter your details ";
-      document.getElementById("span6").innerText = "Please enter your details ";
-      document.getElementById("span7").innerText = "Please enter your details ";
-      document.getElementById("small").style.color = "red";
-      document.getElementById("small").style.fontSize = "14px";
-      window.scrollTo(0, 330);
-    break;
-  }
-  
+    }
  }
-
   document.getElementById("myForm").reset();
 }
