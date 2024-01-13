@@ -78,7 +78,8 @@ function submitForm() {
       document.getElementById("span6").innerText = "Please enter your details ";
       document.getElementById("span7").innerText = "Please enter your details ";
   } else
-     for(let i=0;i<)
+     var myForm = document.getElememtById('myForm').value;
+     for(let i=0;i<myForm.length;i++){
   switch (firstname,lastname,address,pincode,gender,foodCount,state,country){
     case firstname == "";
       document.getElementById("span1").innerText = "Please enter your details ";
@@ -122,6 +123,7 @@ function submitForm() {
       window.scrollTo(0, 330);
     break;
   }
+ }
 
   document.getElementById("myForm").reset();
 }
